@@ -3,77 +3,129 @@ import logo from "../../assets/logo2.png";
 import { FaFacebook, FaInstagram, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
-   return (
-        <footer className="bg-gradient-to-r from-[#022D3D] to-[#065077] text-white py-8">
-            <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    {/* Footer Left: Logo and Description */}
-                    <div>
-                        {/* Footer Left: Logo and Description */}
-                        <div>
-                            <a href="#" className="inline-block">
-                                <img src={logo} alt="Logo" className="h-12 w-auto" />
-                            </a>
-                            <p className="mt-2 text-gray-400 text-base">
-                                Nuestro compromiso es brindar seguridad, eficiencia y calidad<br />en cada proyecto
-                            </p>
-                        </div>
-                    </div>
+  return (
+    <footer className="bg-gradient-to-r from-[#222222] via-[#5C5C5C] to-[#222222] text-white py-10">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Izquierda: Logo y descripción */}
+          <div>
+            <a href="#" className="inline-block">
+              <img
+                src={logo}
+                alt="Logo Alta y Precisión"
+                className="h-12 w-auto"
+              />
+            </a>
+            <p className="mt-3 text-[#E9EAEA] text-base font-light leading-relaxed">
+              Nuestro compromiso es ofrecer soluciones precisas, eficientes y
+              confiables, respaldadas por tecnología e ingeniería de alto nivel.
+            </p>
+          </div>
 
-                    {/* Footer Center: Useful Links */}
-                    <div>
-                        <h3 className="text-xl font-semibold text-white">Enlaces Rapidos</h3>
-                        <ul className="mt-4 space-y-2 text-base">
-                            <li><NavLink to="/"><a href="#" className="text-gray-400 hover:text-gray-300 transition">Inicio</a></NavLink></li>
-                            <li><NavLink to="/AboutPage"><a href="#" className="text-gray-400 hover:text-gray-300 transition">Quiénes Somos</a></NavLink></li>
-                            <li><NavLink to="/ServicesPage"><a href="#" className="text-gray-400 hover:text-gray-300 transition">Servicios</a></NavLink></li>
-                        </ul>
-                    </div>
+          {/* Enlaces rápidos */}
+          <div>
+            <h3 className="text-xl font-semibold text-[#B37A2E]">
+              Enlaces rápidos
+            </h3>
+            <ul className="mt-4 space-y-2 text-base">
+              <li>
+                <NavLink
+                  to="/"
+                  className="text-[#E9EAEA] hover:text-[#B37A2E] transition"
+                >
+                  Inicio
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/AboutPage"
+                  className="text-[#E9EAEA] hover:text-[#B37A2E] transition"
+                >
+                  Quiénes Somos
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/ServicesPage"
+                  className="text-[#E9EAEA] hover:text-[#B37A2E] transition"
+                >
+                  Servicios
+                </NavLink>
+              </li>
+            </ul>
+          </div>
 
-                    {/* Footer New Links Section */}
-                    <div>
-                        <h3 className="text-xl font-semibold text-white">Soporte & Legal</h3>
-                        <ul className="mt-4 space-y-2 text-base">
-                            <li><a href="#" className="text-gray-400 hover:text-gray-300 transition">Términos & Condiciones</a></li>
-                            <li><a href="#" className="text-gray-400 hover:text-gray-300 transition">Políticas de privacidad</a></li>
-                            <li><a href="#" className="text-gray-400 hover:text-gray-300 transition">Políticas de Cookies</a></li>
-                            <li><a href="#" className="text-gray-400 hover:text-gray-300 transition">FAQ</a></li>
-                        </ul>
-                    </div>
+          {/* Soporte y Legal */}
+          <div>
+            <h3 className="text-xl font-semibold text-[#B37A2E]">
+              Soporte & Legal
+            </h3>
+            <ul className="mt-4 space-y-2 text-base">
+              <li>
+                <a
+                  href="#"
+                  className="text-[#E9EAEA] hover:text-[#B37A2E] transition"
+                >
+                  Términos & Condiciones
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-[#E9EAEA] hover:text-[#B37A2E] transition"
+                >
+                  Políticas de Privacidad
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-[#E9EAEA] hover:text-[#B37A2E] transition"
+                >
+                  Políticas de Cookies
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-[#E9EAEA] hover:text-[#B37A2E] transition"
+                >
+                  FAQ
+                </a>
+              </li>
+            </ul>
+          </div>
 
-                    {/* Footer Right: Social Media & Contact */}
-                    <div>
-                        <h3 className="text-xl font-semibold text-white">Dirección & Contacto</h3>
-
-                        <div className="mt-4 space-y-3 text-gray-400 text-base">
-                            {/* Email */}
-                            <p className="flex items-center">
-                                <FaEnvelope className="text-gray-400 flex-shrink-0 text-base mt-1 mr-2" />
-                                <p>edernanol@gmail.com</p>
-                            </p>
-
-                            {/* Facebook */}
-                            <p className="flex items-center">
-                                <FaFacebook className="text-gray-400 flex-shrink-0 text-base mt-1 mr-2" />
-                                <p>Grupo Edernanol S.A. de C.V.</p>
-                            </p>
-
-                            {/* Instagram */}
-                            <p className="flex items-center">
-                                <FaInstagram className="text-gray-400 flex-shrink-0 text-base mt-1 mr-2" />
-                                <p>Grupo Edernanol S.A. de C.V.</p>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Footer Bottom: Copyright */}
-                <div className="mt-8 border-t border-gray-700 pt-4 text-center text-gray-400 text-base">
-                    <p> © 2025 Edernanol S.A de C.V. Todos los derechos reservados.</p>
-                </div>
+          {/* Contacto */}
+          <div>
+            <h3 className="text-xl font-semibold text-[#B37A2E]">Contacto</h3>
+            <div className="mt-4 space-y-3 text-[#E9EAEA] text-base">
+              <p className="flex items-center">
+                <FaEnvelope className="text-[#B37A2E] mr-2" />
+                contacto@altayprecision.com
+              </p>
+              <p className="flex items-center">
+                <FaFacebook className="text-[#B37A2E] mr-2" />
+                Alta y Precisión
+              </p>
+              <p className="flex items-center">
+                <FaInstagram className="text-[#B37A2E] mr-2" />
+                @altayprecision
+              </p>
             </div>
-        </footer>
-    )
-}
+          </div>
+        </div>
 
-export default Footer
+        {/* Pie inferior */}
+        <div className="mt-8 border-t border-[#B37A2E]/40 pt-4 text-center text-[#E9EAEA] text-sm">
+          <p>
+            © 2025 Alta y Precisión S.A. de C.V. — Todos los derechos
+            reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

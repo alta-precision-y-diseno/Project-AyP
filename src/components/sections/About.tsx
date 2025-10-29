@@ -1,55 +1,47 @@
-import logogris from "../../assets/logogris2.png"
-import elegirnos from "../../assets/elegirnos.png"
-import Button from "../ui/Button"
-import { NavLink } from "react-router"
+import logogris from "../../assets/logogris2.png";
+import elegirnos from "../../assets/elegirnos.png";
+import Button from "../ui/Button";
+import { NavLink } from "react-router";
 
 const About = () => {
   return (
-    <section className="overflow-hidden bg-gray-50 sm:grid sm:grid-cols-2 sm:items-center pt-4">
-      <div className="relative z-0 h-[350px] md:h-[450px] lg:h-[550px] flex flex-col  md:p-12 lg:px-16 lg:py-24 bg-cover bg-center">
-
-        <img
-          src={logogris}
-          alt="Fondo decorativo"
-          className="absolute inset-0 w-full h-full object-cover -z-10 hidden md:block"
-        />
-
-        <div className="mx-auto max-w-xl text-center ">
-          <h2 className="text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-[#065077] via-[#29C4AB] to-black pb-4  ">
-            ¿Por qué elegirnos?
+    <section className="bg-[#FFFFFF] pt-0 pb-12 sm:pb-20">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] items-center gap-12 px-6 sm:px-10 lg:px-20 font-[eurostile]">
+        {/* Columna izquierda (texto ampliado) */}
+        <div className="flex flex-col justify-center text-center sm:text-left">
+          <h2 className="text-4xl md:text-5xl font-semibold text-[#343434] mb-6 leading-snug">
+            ¿Por qué{" "}
+            <span className="text-[#BA863D] font-semibold">elegirnos?</span>
           </h2>
 
-          <p className=" text-black text-xl max-w-2xl font-extralight md:mt-4 dark:text-black py-10 sm:py-0">
-            Contamos con experiencia comprobada en el sector industrial y
-            marítimo, con personal altamente capacitado y especializado
-            que brinda atención personalizada y soluciones a la medida,
-            siempre con un enfoque en seguridad, cumplimiento y eficiencia.
+          <p className="text-[#5A5D5D] text-lg leading-relaxed font-light mb-10 max-w-2xl mx-auto sm:mx-0">
+            Contamos con experiencia comprobada en el sector industrial y técnico.
+            Nuestro equipo altamente capacitado brinda atención personalizada y
+            soluciones a la medida, siempre con enfoque en precisión, cumplimiento
+            y eficiencia. Cada proyecto representa un compromiso con la calidad y
+            la exactitud constructiva.
           </p>
 
-          <div className="text-center pb-10 sm:py-12">
+          <NavLink to="/AboutPage">
+            <Button
+              label="Obtener informes"
+              className="bg-[#BA863D] hover:bg-[#343434] text-white px-8 py-3 font-medium transition-all duration-300"
+              onClick={() => console.log("Click en botón")}
+            />
+          </NavLink>
+        </div>
 
-
-            <NavLink to="/AboutPage">
-              <Button
-                label="Obtener informes"
-                onClick={() => console.log("Click en botón")}
-              />
-            </NavLink>
-          </div>
+        {/* Columna derecha (imagen rectangular) */}
+        <div className="flex justify-center sm:justify-end">
+          <img
+            src={elegirnos}
+            alt="Sección ilustrativa"
+            className="rounded-lg w-full max-w-2xl h-[300px] md:h-[340px] lg:h-[380px] object-cover object-center shadow-sm"
+          />
         </div>
       </div>
-
-      {/* Imagen derecha */}
-      <div className="h-[350px] md:h-[450px] lg:h-[550px]">
-        <img
-          alt="Sección ilustrativa"
-          src={elegirnos}
-          className="w-full h-full object-cover mt-12 sm:mt-0"
-        />
-      </div>
     </section>
+  );
+};
 
-  )
-}
-
-export default About
+export default About;
