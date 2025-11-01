@@ -4,70 +4,64 @@ import Button from "../ui/Button";
 import { NavLink } from "react-router";
 
 const ServiceSection = () => {
-    return (
-        <section className="relative bg-gray-50 py-16 px-8 md:py-24 md:px-24 lg:px-40 xl:px-52">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-stretch md:items-stretch">
+  return (
+    <section className="relative bg-[#FFFFFF] pt-16 pb-16 px-8 md:pb-24 md:px-20 lg:px-20 xl:px-30">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-stretch">
+        {/* Imagen izquierda — sin modificar tamaños */}
+        <div className="relative w-full h-[400px] md:h-auto">
+          <img
+            src={diagonalImg}
+            alt="Servicio de construcción"
+            className="w-full h-full object-cover md:h-full md:absolute md:inset-0"
+          />
+        </div>
 
-                {/* Imagen izquierda */}
-                <div className="relative w-full h-[400px] md:h-auto">
-                    <img
-                        src={diagonalImg}
-                        alt="Ilustración servicio marítimo"
-                        className="w-full h-full object-cover md:h-full md:absolute md:inset-0"
-                    />
-                </div>
+        {/* Texto derecho (solo más ancho) */}
+        <div className="flex flex-col justify-center space-y-6 max-w-[700px]">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-[#343434]">
+            <span className="text-[#343434]">Servicios de construcción</span>
+          </h2>
 
-                {/* Texto derecho */}
-                <div className="flex flex-col justify-center space-y-6 bg-white/0">
-                    <h2 className="text-3xl md:text-5xl font-light tracking-tight text-black">
-                        <span className="bg-clip-text font-extralight text-transparent bg-gradient-to-r from-[#065077] to-[#29C4AB]">
-                            Transporte Marítimo de Altura
-                        </span>
-                    </h2>
+          <p className="text-[#5A5D5D] text-lg md:text-xl text-justify leading-relaxed">
+            Ejecución de obras civiles, arquitectónicas y de interiorismo con
+            enfoque en calidad, seguridad y cumplimiento. Cada proyecto se
+            desarrolla bajo estrictos estándares técnicos y estéticos,
+            garantizando precisión y resultados duraderos en cada etapa
+            constructiva.
+          </p>
 
-                    <p className="text-black text-lg md:text-xl font-extralight text-justify">
-                        En Edernanol ofrecemos un servicio especializado en transporte
-                        marítimo de altura, diseñado para atender las necesidades logísticas
-                        de empresas que buscan seguridad, eficiencia y cumplimiento en sus
-                        operaciones internacionales. Contamos con experiencia y el respaldo
-                        necesario para garantizar que cada envío llegue a su destino en
-                        óptimas condiciones y en el tiempo establecido.
-                    </p>
+          {/* Lista de puntos */}
+          <ul className="space-y-3 text-[#5A5D5D] text-base md:text-lg ">
+            <li className="flex items-center gap-3">
+              <IoMdCheckmarkCircleOutline className="text-[#BA863D] text-2xl" />
+              Obras nuevas, remodelaciones y ampliaciones.
+            </li>
+            <li className="flex items-center gap-3">
+              <IoMdCheckmarkCircleOutline className="text-[#BA863D] text-2xl" />
+              Construcción de mobiliario arquitectónico especializado.
+            </li>
+            <li className="flex items-center gap-3">
+              <IoMdCheckmarkCircleOutline className="text-[#BA863D] text-2xl" />
+              Supervisión técnica y control de calidad estructural.
+            </li>
+            <li className="flex items-center gap-3">
+              <IoMdCheckmarkCircleOutline className="text-[#BA863D] text-2xl" />
+              Cumplimiento normativo en cada obra.
+            </li>
+          </ul>
 
-                    {/* Lista de pasos */}
-                    <ul className="space-y-3 text-black text-base md:text-xl font-extralight">
-                        <li className="flex items-center gap-3">
-                            <IoMdCheckmarkCircleOutline className="text-[#065077] text-2xl" />
-                            Recepción y verificación de mercancías.
-                        </li>
-                        <li className="flex items-center gap-3">
-                            <IoMdCheckmarkCircleOutline className="text-[#065077] text-2xl" />
-                            Embarque y coordinación logística.
-                        </li>
-                        <li className="flex items-center gap-3">
-                            <IoMdCheckmarkCircleOutline className="text-[#065077] text-2xl" />
-                            Transporte y seguimiento en tiempo real.
-                        </li>
-                        <li className="flex items-center gap-3">
-                            <IoMdCheckmarkCircleOutline className="text-[#065077] text-2xl" />
-                            Descarga en puerto de destino.
-                        </li>
-                        <li className="flex items-center gap-3">
-                            <IoMdCheckmarkCircleOutline className="text-[#065077] text-2xl" />
-                            Reportes y gestión documental.
-                        </li>
-                    </ul>
-
-                    <NavLink to="/ContactPage">
-                        <Button
-                            label="Contáctanos"
-                            onClick={() => console.log("Click en botón")}
-                        />
-                    </NavLink>
-                </div>
-            </div>
-        </section>
-    );
+          {/* Botón */}
+          <NavLink to="/ContactPage">
+            <Button
+              label="Contáctanos"
+              onClick={() => console.log("Click en botón")}
+              className="bg-[#B37A2E] text-white hover:bg-[#222222] transition-all"
+            />
+          </NavLink>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default ServiceSection;

@@ -2,7 +2,8 @@ import ServicesHero from "../components/sections/ServicesHero"
 import ServiceSection from "../components/sections/ServiceSection"
 import ServiceSection2 from "../components/sections/ServiceSection2"
 import ServiceSection3 from "../components/sections/ServiceSection3"
-import BenefitsSection from "../components/sections/BenefitsSection"
+import ServiceSection4 from "../components/sections/ServiceSection4"
+import AnimatedCard from "../components/sections/AnimatedCard"
 
 const ServicesPage = () => {
   return (
@@ -11,7 +12,8 @@ const ServicesPage = () => {
         <ServiceSection />
         <ServiceSection2 />
         <ServiceSection3 />
-        <BenefitsSection />
+        <ServiceSection4 />
+        <AnimatedCard />
     </div>
   )
 }

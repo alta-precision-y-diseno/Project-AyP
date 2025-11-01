@@ -22,7 +22,7 @@ const ValuesSection: React.FC = () => {
             <div className="max-w-7xl mx-auto">
                 {/* Título con icono */}
                 <h2 className="text-2xl md:text-3xl font-bold text-black flex items-center gap-2 mb-6">
-                    <CustomIcon size={70} color1="#065077" color2="#2FA9C9" />
+                    <CustomIcon size={70} color1="#1D1D1E" color2="#BA863D"/>
                     Valores Personales
                 </h2>
 

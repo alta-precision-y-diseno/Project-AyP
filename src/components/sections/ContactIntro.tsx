@@ -1,22 +1,19 @@
 const ContactIntro = () => {
-    return (
+  return (
+    <section className="text-center mt-6 font-[Avenir Next LT Pro,Host Grotesk] px-6">
+      <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-[#343434]">
+        <span className="text-[#BA863D]">¡Queremos conocer tu opinión!</span>
+      </h2>
 
-        <div className="mb-12 text-center">
-            
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4 text-black">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#065077] to-[#29C4AB]">
-                    ¡Queremos conocer tu opinión!
-                </span>
-            </h2>
+      <p className="text-[#5A5D5D] text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed">
+        Nuestra misión es ofrecerte una atención de excelencia, brindando
+        seguridad, confianza y resultados precisos en cada proyecto.  
+        Comparte tus comentarios, valoramos tu opinión y queremos seguir mejorando cada día.
+      </p>
 
-            <p className="text-black dark:text-black text-xl mx-auto font-extralight ">
-                Nuestra misión es brindarte una atención de calidad a ti y a tus clientes,
-                fomentando seguridad y confianza en cada servicio. Comparte tu opinión,
-                comentarios, quejas y sugerencias en los siguientes contactos.
-            </p>
+      
+    </section>
+  );
+};
 
-        </div>
-    )
-}
-
-export default ContactIntro
+export default ContactIntro;

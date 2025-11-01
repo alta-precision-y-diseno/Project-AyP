@@ -4,22 +4,18 @@ import { FaFacebook, FaInstagram, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-[#222222] via-[#5C5C5C] to-[#222222] text-white py-10">
+    <footer className="bg-gradient-to-r from-[#1D1D1E] via-[#1D1D1E] to-[#1D1D1E] text-white py-10">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Izquierda: Logo y descripción */}
-          <div>
+          <div className="flex items-center justify-center h-full">
             <a href="#" className="inline-block">
               <img
                 src={logo}
                 alt="Logo Alta y Precisión"
-                className="h-12 w-auto"
+                className="h-25 w-auto"
               />
             </a>
-            <p className="mt-3 text-[#E9EAEA] text-base font-light leading-relaxed">
-              Nuestro compromiso es ofrecer soluciones precisas, eficientes y
-              confiables, respaldadas por tecnología e ingeniería de alto nivel.
-            </p>
           </div>
 
           {/* Enlaces rápidos */}
@@ -117,7 +113,7 @@ const Footer = () => {
         </div>
 
         {/* Pie inferior */}
-        <div className="mt-8 border-t border-[#B37A2E]/40 pt-4 text-center text-[#E9EAEA] text-sm">
+        <div className="mt-8 border-t border-[#E9EAEA]/60 pt-4 text-center text-[#E9EAEA] text-sm">
           <p>
             © 2025 Alta y Precisión S.A. de C.V. — Todos los derechos
             reservados.

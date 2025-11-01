@@ -19,11 +19,11 @@ const MissionVision: React.FC = () => {
         <div className="space-y-8">
           {/* Misión */}
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-black flex items-center gap-2 mb-6">
-              <CustomIcon size={70} color1="#065077" color2="#2FA9C9" />
+            <h2 className="text-2xl md:text-3xl font-bold text-[#343434]  flex items-center gap-2 mb-6">
+              <CustomIcon size={70} color1="#1D1D1E" color2="#BA863D" />
               Misión
             </h2>
-            <p className="text-black leading-relaxed mb-4 text-lg text-justify">
+            <p className="text-[#5A5D5D] leading-relaxed mb-4 text-lg text-justify">
               Ofrecer soluciones marítimas y logísticas confiables, seguras y
               eficientes que optimicen la cadena de suministro de nuestros
               clientes, contribuyendo a su crecimiento y competitividad.
@@ -32,11 +32,11 @@ const MissionVision: React.FC = () => {
 
           {/* Visión */}
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-black flex items-center gap-2 mb-6">
-              <CustomIcon size={70} color1="#065077" color2="#2FA9C9" />
+            <h2 className="text-2xl md:text-3xl font-bold text-[#343434]  flex items-center gap-2 mb-6">
+              <CustomIcon size={70} color1="#1D1D1E" color2="#BA863D" />
               Visión
             </h2>
-            <p className="text-black leading-relaxed mb-4 text-lg text-justify">
+            <p className="text-[#5A5D5D] leading-relaxed mb-4 text-lg text-justify">
               Consolidar nuestros procesos de operación y posicionamiento en
               terminales portuarias y centros de servicio logístico en beneficio
               de nuestros clientes, colaboradores y accionistas.

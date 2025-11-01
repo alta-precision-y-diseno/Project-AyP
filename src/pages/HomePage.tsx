@@ -2,7 +2,7 @@ import About from "../components/sections/About"
 import Clients from "../components/sections/Clients"
 import Hero from "../components/sections/Hero"
 import Services from "../components/sections/Services"
-import Testimonials2 from "../components/sections/Testimonials2"
+import Testimonials2 from "../components/sections/Testimonials"
 
 const HomePage = () => {
   return (

@@ -11,8 +11,9 @@ const Services = () => {
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
         {/* Encabezado */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl bg-clip-text text-[#343434] pb-4 font-bold">
-            ¡Lo que ofrecemos!
+          <h2 className="text-4xl md:text-5xl font-semibold text-[#343434] mb-6 leading-snug">
+            ¡Lo que{" "}
+            <span className="text-[#BA863D] font-semibold">ofrecemos!</span>
           </h2>
           <p className="text-[#5A5D5D] text-lg max-w-3xl mx-auto font-light leading-relaxed">
             En alta precisión y diseño ofrecemos soluciones constructivas que

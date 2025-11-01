@@ -5,62 +5,55 @@ import { NavLink } from "react-router";
 
 const ServiceSection3 = () => {
   return (
-    <section className="relative bg-gray-50 pb-16 px-8 md:pb-24 md:px-24 lg:px-40 xl:px-52">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-stretch md:items-stretch">
-        
-        {/* Imagen izquierda */}
+    <section className="relative bg-[#FFFFFF] pb-16 px-8 md:pb-24 md:px-20 lg:px-20 xl:px-30">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-stretch">
+        {/* Imagen izquierda — sin modificar tamaños */}
         <div className="relative w-full h-[400px] md:h-auto">
           <img
             src={diagonalImg}
-            alt="Ilustración de servicio industrial"
-            className="w-full h-full object-cover md:absolute md:inset-0"
+            alt="Servicio de construcción"
+            className="w-full h-full object-cover md:h-full md:absolute md:inset-0"
           />
         </div>
 
-        {/* Texto derecho */}
-        <div className="flex flex-col justify-center space-y-6">
-          <h2 className="text-3xl md:text-5xl font-light tracking-tight text-black">
-            <span className="bg-clip-text font-extralight text-transparent bg-gradient-to-r from-[#065077] to-[#29C4AB]">
-              Reparación y mantenimiento de equipo para mover y acomodar materiales
+        {/* Texto derecho (solo más ancho) */}
+        <div className="flex flex-col justify-center space-y-6 max-w-[700px]">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-[#343434]">
+            <span className="text-[#343434]">
+              Planeación y gestión de proyectos de construcción
             </span>
           </h2>
 
-          <p className="text-black text-lg md:text-xl font-extralight text-justify">
-            En Edernanol ofrecemos servicios especializados en mantenimiento y reparación 
-            de equipos utilizados para la manipulación y movimiento de materiales. Nuestro 
-            objetivo es garantizar que tus sistemas de carga y maquinaria operen con máxima 
-            eficiencia, seguridad y durabilidad, minimizando tiempos de inactividad y costos 
-            operativos.
+          <p className="text-[#5A5D5D] text-lg md:text-xl text-justify leading-relaxed">
+            Brindamos planeación integral para proyectos dentro y fuera de
+            México, considerando aspectos técnicos, logísticos y normativos.
+            Nuestro enfoque garantiza el cumplimiento estructural, la
+            coordinación eficiente y la entrega precisa en cada fase del
+            desarrollo.
           </p>
 
-          {/* Lista de pasos */}
-          <ul className="space-y-3 text-black text-base md:text-xl font-extralight">
+          {/* Lista de puntos */}
+          <ul className="space-y-3 text-[#5A5D5D] text-base md:text-lg ">
             <li className="flex items-center gap-3">
-              <IoMdCheckmarkCircleOutline className="text-[#065077] text-2xl" />
-              Diagnóstico y evaluación del estado del equipo.
+              <IoMdCheckmarkCircleOutline className="text-[#BA863D] text-2xl" />
+              Planeación, gestión y seguimiento integral de proyectos.
             </li>
             <li className="flex items-center gap-3">
-              <IoMdCheckmarkCircleOutline className="text-[#065077] text-2xl" />
-              Mantenimiento preventivo programado.
+              <IoMdCheckmarkCircleOutline className="text-[#BA863D] text-2xl" />
+              Coordinación con equipos y entidades internacionales.
             </li>
             <li className="flex items-center gap-3">
-              <IoMdCheckmarkCircleOutline className="text-[#065077] text-2xl" />
-              Reparación de componentes eléctricos y mecánicos.
-            </li>
-            <li className="flex items-center gap-3">
-              <IoMdCheckmarkCircleOutline className="text-[#065077] text-2xl" />
-              Sustitución de piezas y calibración de sistemas.
-            </li>
-            <li className="flex items-center gap-3">
-              <IoMdCheckmarkCircleOutline className="text-[#065077] text-2xl" />
-              Pruebas de rendimiento y entrega con reporte técnico.
+              <IoMdCheckmarkCircleOutline className="text-[#BA863D] text-2xl" />
+              Cumplimiento normativo y técnico en obra civil y estructural.
             </li>
           </ul>
 
+          {/* Botón */}
           <NavLink to="/ContactPage">
             <Button
               label="Contáctanos"
               onClick={() => console.log("Click en botón")}
+              className="bg-[#B37A2E] text-white hover:bg-[#222222] transition-all"
             />
           </NavLink>
         </div>
