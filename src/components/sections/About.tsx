@@ -1,4 +1,3 @@
-import logogris from "../../assets/logogris2.png";
 import elegirnos from "../../assets/elegirnos.png";
 import Button from "../ui/Button";
 import { NavLink } from "react-router";
