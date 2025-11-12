@@ -9,9 +9,10 @@ const ContactSchema = z.object({
   subject: z.string().min(3).max(120),
   message: z.string().min(10).max(5000),
   website: z.string().optional().default(""),
+  token: z.string().optional(), // token de reCAPTCHA
 })
 
-// Helper para obtener el body correctamente
+// Helper para obtener body
 async function getJsonBody(req: VercelRequest) {
   if (req.body && typeof req.body === "object") return req.body
   const chunks: Uint8Array[] = []
@@ -27,7 +28,7 @@ async function getJsonBody(req: VercelRequest) {
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  // Permite CORS (preflight)
+  // Permitir CORS (preflight)
   if (req.method === "OPTIONS") {
     res.setHeader("Access-Control-Allow-Origin", "*")
     res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS")
@@ -43,12 +44,29 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const body = await getJsonBody(req)
     const parsed = ContactSchema.safeParse(body)
     if (!parsed.success) {
-      return res
-        .status(400)
-        .json({ ok: false, error: "Datos inválidos", issues: parsed.error.flatten() })
+      return res.status(400).json({
+        ok: false,
+        error: "Datos inválidos",
+        issues: parsed.error.flatten(),
+      })
     }
 
-    const { email, subject, message, phone, website } = parsed.data
+    const { email, subject, message, phone, website, token } = parsed.data
+
+    // ✅ Validación de reCAPTCHA
+    if (!token) {
+      return res.status(400).json({ ok: false, error: "Captcha no proporcionado" })
+    }
+
+    const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET}&response=${token}`
+    const captchaRes = await fetch(verifyUrl, { method: "POST" })
+    const captchaData = await captchaRes.json()
+
+    if (!captchaData.success) {
+      return res.status(400).json({ ok: false, error: "Captcha inválido o expirado" })
+    }
+
+    // Anti-spam
     if (website && website.trim() !== "") {
       return res.status(200).json({ ok: true, skipped: true })
     }
@@ -64,7 +82,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       },
     })
 
-    // Envío del correo con diseño mejorado
+    // Envío del correo
     const info = await transporter.sendMail({
       from: process.env.FROM_EMAIL || process.env.SMTP_USER,
       to: process.env.TO_EMAIL || process.env.SMTP_USER,
@@ -74,22 +92,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       html: `
       <div style="font-family:'Segoe UI',Arial,sans-serif;background-color:#f3f7f9;padding:40px 0;color:#333;">
         <table align="center" cellpadding="0" cellspacing="0" style="max-width:640px;width:100%;background-color:#ffffff;border-radius:14px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,0.08);">
-          
-          <!-- CABECERA -->
           <tr>
-            <td style="background-color:#198383;text-align:center;color:#ffffff;text-align:center;padding:30px 40px;">
+            <td style="background-color:#198383;text-align:center;color:#ffffff;padding:30px 40px;">
               <h1 style="margin:0;font-size:26px;font-weight:700;">Nuevo mensaje de contacto</h1>
               <p style="margin:6px 0 0;font-size:16px;">Edernanol S.A. de C.V.</p>
             </td>
           </tr>
-
-          <!-- CONTENIDO -->
           <tr>
             <td style="padding:35px 45px;">
               <p style="font-size:18px;line-height:1.5;color:#333;margin-bottom:25px;">
                 Has recibido un nuevo mensaje desde el formulario de contacto de tu sitio web:
               </p>
-
               <table cellpadding="8" cellspacing="0" style="width:100%;font-size:17px;border-collapse:collapse;">
                 <tr>
                   <td style="width:160px;font-weight:700;color:#065077;">Email:</td>
@@ -104,16 +117,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
                   <td>${subject}</td>
                 </tr>
               </table>
-
               <hr style="margin:30px 0;border:none;border-top:1px solid #e0e0e0;" />
-
               <p style="font-size:17px;line-height:1.7;color:#333;margin-bottom:10px;">
                 ${message.replace(/\n/g, "<br/>")}
               </p>
             </td>
           </tr>
-
-          <!-- PIE DE PÁGINA -->
           <tr>
             <td style="background-color:#065077;text-align:center;color:#ffffff;padding:25px 35px;font-size:15px;">
               Este mensaje fue enviado desde el sitio web de <strong>Edernanol</strong>.<br/>
