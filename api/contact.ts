@@ -2,7 +2,6 @@ import type { VercelRequest, VercelResponse } from "@vercel/node"
 import nodemailer from "nodemailer"
 import { z } from "zod"
 
-// Validación del formulario
 const ContactSchema = z.object({
   email: z.string().email(),
   phone: z.string().min(10).max(15),
@@ -12,7 +11,6 @@ const ContactSchema = z.object({
   token: z.string().optional(),
 })
 
-// Helper para obtener body
 async function getJsonBody(req: VercelRequest) {
   if (req.body && typeof req.body === "object") return req.body
   const chunks: Uint8Array[] = []
@@ -28,7 +26,6 @@ async function getJsonBody(req: VercelRequest) {
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  // Permitir CORS (preflight)
   if (req.method === "OPTIONS") {
     res.setHeader("Access-Control-Allow-Origin", "*")
     res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS")
@@ -53,7 +50,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const { email, subject, message, phone, website, token } = parsed.data
 
-    // Validación reCAPTCHA
+    // reCAPTCHA
     if (!token) {
       return res.status(400).json({ ok: false, error: "Captcha no proporcionado" })
     }
@@ -71,7 +68,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(200).json({ ok: true, skipped: true })
     }
 
-    // Configuración SMTP
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT || 465),
@@ -82,7 +78,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       },
     })
 
-    // Envío del correo
+    // 🎨 Email HTML con la nueva paleta
     const info = await transporter.sendMail({
       from: process.env.FROM_EMAIL || process.env.SMTP_USER,
       to: process.env.TO_EMAIL || process.env.SMTP_USER,
@@ -90,28 +86,28 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       subject: `[Alta Precisión y Diseño] ${subject}`,
       text: `De: ${email}\nTeléfono: ${phone}\n\n${message}`,
       html: `
-      <div style="font-family:'Segoe UI',Arial,sans-serif;background-color:#f3f7f9;padding:40px 0;color:#333;">
-        <table align="center" cellpadding="0" cellspacing="0" style="max-width:640px;width:100%;background-color:#ffffff;border-radius:14px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,0.08);">
+      <div style="font-family:'Segoe UI',Arial,sans-serif;background-color:#F3F4F6;padding:40px 0;color:#333;">
+        <table align="center" cellpadding="0" cellspacing="0" style="max-width:640px;width:100%;background-color:#FFFFFF;border-radius:14px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,0.08);">
           
           <!-- CABECERA -->
           <tr>
-            <td style="background-color:#065077;text-align:center;color:#ffffff;padding:30px 40px;">
+            <td style="background-color:#1F1F1F;text-align:center;color:#FFFFFF;padding:30px 40px;">
               <h1 style="margin:0;font-size:26px;font-weight:700;">Nuevo mensaje de contacto</h1>
-              <p style="margin:6px 0 0;font-size:16px;">Alta Precisión y Diseño</p>
+              <p style="margin:6px 0 0;font-size:16px;color:#D1D1D1;">Alta Precisión y Diseño</p>
             </td>
           </tr>
 
           <!-- CONTENIDO -->
           <tr>
             <td style="padding:35px 45px;">
-              <p style="font-size:18px;line-height:1.5;color:#343434;margin-bottom:25px;">
+              <p style="font-size:18px;line-height:1.5;color:#555757;margin-bottom:25px;">
                 Has recibido un nuevo mensaje desde el formulario de contacto de tu sitio web:
               </p>
 
               <table cellpadding="8" cellspacing="0" style="width:100%;font-size:17px;border-collapse:collapse;">
                 <tr>
                   <td style="width:160px;font-weight:700;color:#BA863D;">Correo:</td>
-                  <td><a href="mailto:${email}" style="color:#065077;text-decoration:none;">${email}</a></td>
+                  <td><a href="mailto:${email}" style="color:#1F1F1F;text-decoration:none;">${email}</a></td>
                 </tr>
                 <tr>
                   <td style="font-weight:700;color:#BA863D;">Teléfono:</td>
@@ -123,7 +119,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
                 </tr>
               </table>
 
-              <hr style="margin:30px 0;border:none;border-top:1px solid #e0e0e0;" />
+              <hr style="margin:30px 0;border:none;border-top:1px solid #E0E0E0;" />
 
               <p style="font-size:17px;line-height:1.7;color:#343434;margin-bottom:10px;">
                 ${message.replace(/\n/g, "<br/>")}
@@ -133,8 +129,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
           <!-- PIE DE PÁGINA -->
           <tr>
-            <td style="background-color:#343434;text-align:center;color:#ffffff;padding:25px 35px;font-size:15px;">
-              Este mensaje fue enviado desde el sitio web de <strong>Alta Precisión y Diseño</strong>.<br/>
+            <td style="background-color:#1F1F1F;text-align:center;color:#FFFFFF;padding:25px 35px;font-size:15px;">
+              Este mensaje fue enviado desde el sitio web de <strong style="color:#BA863D;">Alta Precisión y Diseño</strong>.<br/>
               <a href="https://altaprecisionydiseno.com" style="color:#BA863D;text-decoration:none;font-weight:500;">www.altaprecisionydiseno.com</a>
             </td>
           </tr>
@@ -149,4 +145,3 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(500).json({ ok: false, error: "No se pudo enviar el correo" })
   }
 }
-
