@@ -15,7 +15,7 @@ const AboutHeroSection = () => {
 
           {/* Párrafos */}
           <p className="text-[#5A5D5D] leading-relaxed mb-4 text-lg text-justify">
-            En Alta Precisión y Diseño desarrollamos soluciones integrales en
+            En <span className="font-bold text-[#BA863D]">Alta Precisión y Diseño</span> desarrollamos soluciones integrales en
             construcción, arquitectura y mobiliario especial. Combinamos
             ingeniería, planeación y ejecución con exactitud técnica para lograr
             proyectos funcionales, eficientes y sostenibles.

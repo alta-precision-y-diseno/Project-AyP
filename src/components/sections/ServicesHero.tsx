@@ -26,7 +26,7 @@ const ServicesHero = () => {
           </h1>
 
           <p className="text-base sm:text-lg lg:text-xl mb-8 max-w-2xl mx-auto md:mx-0 font-light text-[#F7F7F8] text-center md:text-left leading-relaxed">
-            En Alta Precisión y Diseño desarrollamos proyectos integrales que
+            En <span className="font-bold text-[#BA863D]">Alta Precisión y Diseño</span> desarrollamos proyectos integrales que
             combinan ingeniería, planeación y ejecución constructiva con
             exactitud técnica, eficiencia y compromiso. Cada solución está
             diseñada para optimizar recursos y garantizar resultados duraderos.

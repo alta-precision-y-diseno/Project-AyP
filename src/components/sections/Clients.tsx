@@ -8,7 +8,7 @@ const Clients = () => {
         <div className="text-center mb-10">
           <h2 className="text-4xl md:text-5xl font-semibold text-[#F7F7F8] mb-6 leading-snug">
             Empresas que respaldan{" "}
-            <span className="text-[#BA863D] font-semibold">nuestra visión</span>
+            <span className="text-[#BA863D] font-semibold">Nuestra Visión</span>
           </h2>
           <p className="text-[#F7F7F8] text-lg md:text-xl font-light max-w-3xl mx-auto leading-relaxed">
             Colaboramos con aliados estratégicos que garantizan calidad,

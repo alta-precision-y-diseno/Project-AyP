@@ -16,7 +16,7 @@ const Services = () => {
             <span className="text-[#BA863D] font-semibold">ofrecemos!</span>
           </h2>
           <p className="text-[#5A5D5D] text-lg max-w-3xl mx-auto font-light leading-relaxed">
-            En alta precisión y diseño ofrecemos soluciones constructivas que
+            En <span className="font-bold text-[#BA863D]">Alta Precisión y Diseño</span> ofrecemos soluciones constructivas que
             combinan ingeniería, planeación y ejecución con excelencia técnica.
             Cada proyecto es una muestra de precisión, eficiencia y calidad.
           </p>

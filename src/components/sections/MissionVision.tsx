@@ -24,9 +24,11 @@ const MissionVision: React.FC = () => {
               Misión
             </h2>
             <p className="text-[#5A5D5D] leading-relaxed mb-4 text-lg text-justify">
-              Ofrecer soluciones marítimas y logísticas confiables, seguras y
-              eficientes que optimicen la cadena de suministro de nuestros
-              clientes, contribuyendo a su crecimiento y competitividad.
+              Entregar soluciones constructivas y de mobiliario especial con
+              precisión técnica, planeación sólida y diseño funcional. Nos
+              enfocamos en cumplir altos estándares de calidad, seguridad y
+              eficiencia, asegurando resultados confiables y alineados a las
+              necesidades de cada cliente.
             </p>
           </div>
 
@@ -37,9 +39,11 @@ const MissionVision: React.FC = () => {
               Visión
             </h2>
             <p className="text-[#5A5D5D] leading-relaxed mb-4 text-lg text-justify">
-              Consolidar nuestros procesos de operación y posicionamiento en
-              terminales portuarias y centros de servicio logístico en beneficio
-              de nuestros clientes, colaboradores y accionistas.
+              Ser una empresa reconocida por su precisión, innovación y
+              excelencia en proyectos de construcción y diseño especializado,
+              destacando por nuestro profesionalismo y capacidad para
+              desarrollar obras de alto nivel tanto en México como en el
+              extranjero.
             </p>
           </div>
         </div>
@@ -49,4 +53,3 @@ const MissionVision: React.FC = () => {
 };
 
 export default MissionVision;
-

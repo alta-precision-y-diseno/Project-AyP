@@ -23,7 +23,7 @@ const About = () => {
 
           <NavLink to="/AboutPage">
             <Button
-              label="Obtener informes"
+              label="Más información"
               className="bg-[#BA863D] hover:bg-[#343434] text-white px-8 py-3 font-medium transition-all duration-300"
               onClick={() => console.log("Click en botón")}
             />

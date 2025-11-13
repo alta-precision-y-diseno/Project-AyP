@@ -31,7 +31,7 @@ const AboutHero2 = () => {
 
         {/* Texto */}
         <div className="text-center md:text-left max-w-2xl space-y-5">
-          <p className="text-4xl font-extrabold tracking-tight text-[#D7DADE]">
+          <p className="text-5xl font-extrabold tracking-tight text-[#D7DADE]">
             Acerca de
           </p>
 

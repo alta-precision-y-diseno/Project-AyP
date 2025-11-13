@@ -8,6 +8,7 @@ import AboutPage from "../pages/AboutPage"
 import ServicesPage from "../pages/ServicesPage"
 import ContactPage from "../pages/ContactPage"
 import NotFoundPage from "../pages/NotFoundPage"
+import AvisosPage from "../pages/AvisosPage"
 
 
 const Routes = createBrowserRouter([
@@ -19,6 +20,7 @@ const Routes = createBrowserRouter([
             {path: "AboutPage", element: <AboutPage />},
             {path: "ServicesPage", element: <ServicesPage />},
             {path: "ContactPage", element: <ContactPage />},
+            {path: "AvisosPage", element: <AvisosPage />},
             {path: "*", element: <NotFoundPage />},
         ]
     }

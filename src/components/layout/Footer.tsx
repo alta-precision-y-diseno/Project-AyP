@@ -66,28 +66,12 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
+                <NavLink
+                  to="/AvisosPage"
                   className="text-[#E9EAEA] hover:text-[#B37A2E] transition"
                 >
-                  Políticas de Privacidad
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-[#E9EAEA] hover:text-[#B37A2E] transition"
-                >
-                  Políticas de Cookies
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-[#E9EAEA] hover:text-[#B37A2E] transition"
-                >
-                  FAQ
-                </a>
+                  Avisos de privacidad
+                </NavLink>
               </li>
             </ul>
           </div>
