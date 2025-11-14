@@ -4,7 +4,7 @@ const PrivacyPolicy = () => {
       <p className="mb-6">
         <span className="font-bold text-[#BA863D]">Alta Precisión y Diseño</span> es responsable del tratamiento, uso y protección
         de los datos personales que usted proporcione a través de este sitio
-        web.. Nuestro compromiso es garantizar que su información sea tratada de
+        web. Nuestro compromiso es garantizar que su información sea tratada de
         forma responsable, segura y transparente. Este aviso de privacidad tiene
         como objetivo explicarle con detalle qué información recabamos, por qué
         la solicitamos, cómo la utilizamos y qué derechos tiene usted para
@@ -144,15 +144,13 @@ const PrivacyPolicy = () => {
         <li>Acceso: conocer qué información recibimos.</li>
         <li>Rectificación: corregir datos incorrectos o desactualizados.</li>
         <li>Cancelación: solicitar la eliminación de su información.</li>
-        <li>
-          Oposición: pedir que dejemos de utilizar sus datos para contactarlo.
-        </li>
+        <li>Oposición: pedir que dejemos de utilizar sus datos para contactarlo.</li>
       </ul>
 
       <p className="mb-6">
         Puede ejercer estos derechos mediante el formulario de contacto del
-        sitio, por correo electrónico: [correo pendiente], o por teléfono:
-        [número pendiente]. Todas las solicitudes serán atendidas en un plazo de
+        sitio, por correo electrónico: contacto@altaprecisionydiseno.com, o por teléfono:
+        +52 4423474026. Todas las solicitudes serán atendidas en un plazo de
         1 a 4 días hábiles.
       </p>
 
@@ -174,7 +172,7 @@ const PrivacyPolicy = () => {
       </h2>
 
       <p className="mb-6">
-        Alta precisión y diseño no comparte, transfiere, vende ni divulga sus
+        Alta Precisión y Diseño no comparte, transfiere, vende ni divulga sus
         datos personales a terceros bajo ninguna circunstancia, salvo que exista
         un requerimiento legal emitido por una autoridad competente. Fuera de
         ese caso, sus datos permanecerán bajo nuestro resguardo único.
@@ -192,8 +190,8 @@ const PrivacyPolicy = () => {
         para que usted siempre esté informado del manejo de sus datos.
       </p>
 
-      <p className="text-sm text-black">
-        Fecha de última actualización: 14/11/2024
+      <p className="mb-6 ">
+        Fecha de última actualización: 14/11/2025
       </p>
     </section>
   );

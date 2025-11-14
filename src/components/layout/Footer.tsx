@@ -58,12 +58,12 @@ const Footer = () => {
             </h3>
             <ul className="mt-4 space-y-2 text-base">
               <li>
-                <a
-                  href="#"
+                <NavLink
+                  to="/TerminosPage"
                   className="text-[#E9EAEA] hover:text-[#B37A2E] transition"
                 >
-                  Términos & Condiciones
-                </a>
+                  Términos y Condiciones
+                </NavLink>
               </li>
               <li>
                 <NavLink
@@ -81,16 +81,18 @@ const Footer = () => {
             <h3 className="text-xl font-semibold text-[#B37A2E]">Contacto</h3>
             <div className="mt-4 space-y-3 text-[#E9EAEA] text-base">
               <p className="flex items-center">
-                <FaEnvelope className="text-[#B37A2E] mr-2" />
-                contacto@altayprecision.com
+                <FaEnvelope className="text-[#B37A2E] w-5 h-5 shrink-0 mr-2" />
+                contacto@altaprecisionydiseno.com
               </p>
+
               <p className="flex items-center">
-                <FaFacebook className="text-[#B37A2E] mr-2" />
-                Alta y Precisión
+                <FaFacebook className="text-[#B37A2E] w-5 h-5 shrink-0 mr-2" />
+                Alta Precisión y Diseño
               </p>
+
               <p className="flex items-center">
-                <FaInstagram className="text-[#B37A2E] mr-2" />
-                @altayprecision
+                <FaInstagram className="text-[#B37A2E] w-5 h-5 shrink-0 mr-2" />
+                Alta Precisión y Diseño
               </p>
             </div>
           </div>
@@ -98,10 +100,7 @@ const Footer = () => {
 
         {/* Pie inferior */}
         <div className="mt-8 border-t border-[#E9EAEA]/60 pt-4 text-center text-[#E9EAEA] text-sm">
-          <p>
-            © 2025 Alta y Precisión S.A. de C.V. — Todos los derechos
-            reservados.
-          </p>
+          <p>© 2025 Alta Precisión y Diseño — Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
