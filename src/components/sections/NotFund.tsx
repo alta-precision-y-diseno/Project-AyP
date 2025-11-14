@@ -1,4 +1,4 @@
-import notfund from "../../assets/NotFund.png"
+import NotFund from "../../assets/NotFund.png"
 import Button from "../ui/Button"
 import { NavLink } from "react-router"
 
@@ -8,7 +8,7 @@ const NotFound = () => {
       <div className="max-w-4xl mx-auto px-6 text-center flex flex-col items-center space-y-6">
 
         <img
-          src={notfund}
+          src={NotFund}
           alt="ilustración no encontrada"
           className="w-71 sm:w-86 drop-shadow-[0_0_25px_rgba(43,43,43,0.25)] animate-float"
         />
