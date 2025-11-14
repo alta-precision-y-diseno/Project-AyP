@@ -2,7 +2,7 @@ import notfund from "../../assets/NotFund.png"
 import Button from "../ui/Button"
 import { NavLink } from "react-router"
 
-const NotFoundPage = () => {
+const NotFound = () => {
   return (
     <section className="w-full bg-white mt-6 mb-6">
       <div className="max-w-4xl mx-auto px-6 text-center flex flex-col items-center space-y-6">
@@ -37,4 +37,4 @@ const NotFoundPage = () => {
   )
 }
 
-export default NotFoundPage
+export default NotFound
